@@ -22,7 +22,8 @@ defmodule Issues.MixProject do
   defp deps do
     [
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
-      {:httpoison, "~> 1.7.0"}
+      {:httpoison, "~> 1.7.0"},
+      {:jason, "~> 1.2"}
     ]
   end
 end
