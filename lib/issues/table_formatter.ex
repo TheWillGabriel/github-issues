@@ -29,7 +29,7 @@ defmodule Issues.TableFormatter do
   end
 
   def separator(column_widths) do
-    map_join(column_widths, "-+-", fn width -> List.duplicate("-", width) end)
+    map_join(column_widths, "+", fn width -> List.duplicate("-", width) end)
   end
 
   def puts_in_columns(data_by_columns, format) do
