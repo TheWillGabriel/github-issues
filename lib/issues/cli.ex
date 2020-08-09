@@ -70,9 +70,7 @@ defmodule Issues.CLI do
 
   def sort_descending(issue_list) do
     issue_list
-    |> Enum.sort(fn i1, i2 ->
-      i1["created_at"] >= i2["created_at"]
-    end)
+    |> Enum.sort_by(&(&1["created_at"]), :desc)
   end
 
   def decode_response({:ok, body}), do: body
