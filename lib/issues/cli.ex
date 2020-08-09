@@ -7,6 +7,8 @@ defmodule Issues.CLI do
   last _n_ issues in a GitHub project
   """
 
+  import Issues.TableFormatter, only: [print_table_for_columns: 2]
+
   def run(argv) do
     argv
     |> parse_args
@@ -57,6 +59,7 @@ defmodule Issues.CLI do
     |> decode_response
     |> sort_descending
     |> last(count)
+    |> print_table_for_columns(["number", "created_at", "title"])
   end
 
   def last(list, count) do
